@@ -1,0 +1,229 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>JS-B2</title>
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+        integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="./css/style.css">
+
+
+</head>
+
+<body>
+    <!-- BÀI TẬP 1 -->
+    <section>
+        <div class="homework-task my-5">
+            <div class="homework-task__title d-flex align-items-center">
+                <i class="fas fa-flask"></i>
+                <h3 class="font-weight-bold mb-0">BT1: Quản lý tuyển sinh</h3>
+            </div>
+            <div class="homework-inputs">
+                <div class="d-flex">
+                    <div class="form-group mr-3">
+                        <label for="homework-1-diem-chuan"></label>
+                        <input type="number" name="" id="homework-1-diem-chuan" class="form-control"
+                            placeholder="Điểm chuẩn">
+                    </div>
+
+                    <div class="form-group mr-3 w-20">
+                        <label for="homework-1-khu-vuc"></label>
+                        <select class="form-control" name="homework-1-khu-vuc" id="homework-1-khu-vuc">
+                            <option id="kVNone" value="kVNone">Chọn khu vực</option>
+                            <option id="kVX" value="kVX">X</option> <!-- TH không thuộc khu vực ưu tiên -->
+                            <option id="kVA" value="kVA">A</option>
+                            <option id="kVB" value="kVB">B</option>
+                            <option id="kVC" value="kVC">C</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group mr-3 w-20">
+                        <label for="homework-1-doi-tuong"></label>
+                        <select class="form-control" name="homework-1-doi-tuong" id="homework-1-doi-tuong">
+                            <option id="dTNone" value="dTNone">Chọn đối tượng </option>
+                            <option id="dT0" value="dT0">0</option> <!-- TH không thuộc đối tượng ưu tiên -->
+                            <option id="dT1" value="dT1">1</option>
+                            <option id="dT2" value="dT2">2</option>
+                            <option id="dT3" value="dT3">3</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group mr-3">
+                        <label for="homework-1-mon1"></label>
+                        <input type="number" name="" id="homework-1-mon1" class="form-control"
+                            placeholder="Điểm môn thứ nhất">
+                    </div>
+
+                    <div class="form-group mr-3">
+                        <label for="homework-1-mon2"></label>
+                        <input type="number" name="" id="homework-1-mon2" class="form-control"
+                            placeholder="Điểm môn thứ 2">
+                    </div>
+
+                    <div class="form-group mr-3">
+                        <label for="homework-1-mon3"></label>
+                        <input type="number" name="" id="homework-1-mon3" class="form-control"
+                            placeholder="Điểm môn thứ 3">
+                    </div>
+
+                </div>
+                <button id="homework-1-submit-btn" class="btn btn-primary w-30"
+                    onclick="giaiBaiToanQuanLiTuyenSinh()">Kết quả
+                </button>
+            </div>
+            <div class="homework-output">
+                <i class="fas fa-arrow-right"></i>
+                <span id="homework-1-result"></span>
+            </div>
+        </div>
+    </section>
+
+    <hr />
+
+    <!-- BÀI TẬP 2 -->
+    <section>
+        <div class="homework-task my-5">
+            <div class="homework-task__title d-flex align-items-center">
+                <i class="fas fa-flask"></i>
+                <h3 class="font-weight-bold mb-0">BT2: Tính tiền điện</h3>
+            </div>
+            <div class="homework-inputs">
+                <div class="d-flex justify-content-between text-center">
+                    <div class="form-group w-50 mx-2">
+                        <label for="homework-2-input-1"></label>
+                        <input type="text" name="" id="homework-2-input-1" class="form-control text-center"
+                            placeholder="Nhập số thứ 1">
+                    </div>
+                    <div class="form-group w-50 mx-2">
+                        <label for="homework-2-input-2"></label>
+                        <input type="text" name="" id="homework-2-input-2" class="form-control text-center"
+                            placeholder="Nhập số thứ 2">
+                    </div>
+                </div>
+                <button id="homework-2-submit-btn" class="btn btn-primary w-30" onclick="giaiBaiToanTinhTienDien()">Tính
+                    tiền điện
+                </button>
+            </div>
+            <div class="homework-output">
+                <i class="fas fa-arrow-right"></i>
+                <span id="homework-2-result"></span>
+            </div>
+        </div>
+    </section>
+    <hr />
+
+    <!-- BAI TAP 3 -->
+    <section>
+        <div class="homework-task my-5">
+            <div class="homework-task__title d-flex align-items-center">
+                <i class="fas fa-flask"></i>
+                <h3 class="font-weight-bold mb-0">BT3: Tính thuế</h3>
+            </div>
+            <div class="homework-inputs">
+                <div class="d-flex justify-content-between text-center">
+                    <div class="form-group w-1-in-3 mx-2">
+                        <label for="homework-3-ho-ten"></label>
+                        <input type="text" name="" id="homework-3-ho-ten" class="form-control text-center"
+                            placeholder="Nhập họ tên">
+                    </div>
+                    <div class="form-group w-1-in-3 mx-2">
+                        <label for="homework-3-thu-nhap-nam"></label>
+                        <input type="number" name="" id="homework-3-thu-nhap-nam" class="form-control text-center"
+                            placeholder="Nhập tổng thu nhập năm">
+                    </div>
+                    <div class="form-group w-1-in-3 mx-2">
+                        <label for="homework-3-so-nguoi-phu-thuoc"></label>
+                        <input type="number" name="" id="homework-3-so-nguoi-phu-thuoc" class="form-control text-center"
+                            placeholder="Nhập số người phụ thuộc">
+                    </div>
+                    <br>
+                </div>
+                <button id="homework-3-submit-btn" class="btn btn-primary w-30"
+                    onclick="giaiBaiToanTinhThueThuNhap()">Tính thuế thu nhập
+                </button>
+            </div>
+            <div class="homework-output">
+                <i class="fas fa-arrow-right"></i>
+                <span id="homework-3-result"></span>
+            </div>
+        </div>
+    </section>
+    <hr />
+
+    <!-- BAI TAP 4 -->
+    <section>
+        <div class="homework-task my-5">
+            <div class="homework-task__title d-flex align-items-center">
+                <i class="fas fa-flask"></i>
+                <h3 class="font-weight-bold mb-0">BT4: Tính tiền cáp</h3>
+            </div>
+            <div class="homework-inputs">
+                <div class="d-flex justify-content-between text-center">
+                    <div class="form-group w-25 mx-2">
+                        <label for="homework-4-loai-khach-hang"></label>
+                        <select name="homework-4-loai-khach-hang" onchange="thayUiTuyLoaiKhachHang()"
+                            id="homework-4-loai-khach-hang" class="form-control text-center">
+                            <option id="kHNone" value="kHNone">Chọn loại khách hàng</option>
+                            <option id="kHHome" value="kHHome">Nhà Dân</option>
+                            <option id="kHBiz" value="kHBiz">Doanh Nghiệp</option>
+                        </select>
+                    </div>
+                    <div class="form-group w-25 mx-2">
+                        <label for="homework-4-ma-khach-hang"></label>
+                        <input type="text" name="homework-4-ma-khach-hang" id="homework-4-ma-khach-hang"
+                            class="form-control text-center" placeholder="Nhập mã khách hàng">
+                    </div>
+                    <div class="form-group w-25 mx-2">
+                        <label for="homework-4-so-kenh-cao-cap"></label>
+                        <input type="text" name="homework-4-so-kenh-cao-cap" id="homework-4-so-kenh-cao-cap"
+                            class="form-control text-center" placeholder="Nhập số kênh cao cấp">
+                    </div>
+                    <div class="form-group w-25 mx-2">
+                        <label for="homework-4-so-ket-noi"></label>
+                        <input type="text" name="homework-4-so-ket-noi" id="homework-4-so-ket-noi"
+                            class="form-control text-center input-hidden" placeholder="Nhập số kết nối">
+                    </div>
+                    <br>
+                </div>
+                <button id="homework-4-submit-btn" class="btn btn-primary w-30"
+                    onclick="giaiBaiToanTinhGiaTienCap()">Tính giá cáp
+                </button>
+            </div>
+            <div class="homework-output">
+                <i class="fas fa-arrow-right"></i>
+                <span id="homework-4-result"></span>
+            </div>
+        </div>
+    </section>
+    <hr />
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
+
+    <script src="./js/homework-1.js"></script>
+    <script src="./js/homework-2.js"></script>
+    <script src="./js/homework-3.js"></script>
+    <script src="./js/homework-4.js"></script>
+</body>
+
+</html>
